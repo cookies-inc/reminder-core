@@ -1,20 +1,24 @@
 module.exports = function(app) {
-	var User  = app.models.user;
+
+	var User = app ? app.models.user : null;
 	var controller = {};
 
 	controller.getAll = function() {
 		console.log('Ola');
 	};
 
+  var paramsIsNull = function(pname, pemail) {
+		return !(pname && pemail);
+	};
+
+	controller.paramsIsNull = paramsIsNull;
+
  	controller.create = function(req, res) {
+		var pname = req.body.name,
+		    pemail = req.body.email,
+				pidfacebook = req.body.idfacebook;
 
-		var pfirstname = req.body.firstname
-				,plastname = req.body.lastname
-				,pemail = req.body.email
-				,ppassword = req.body.password
-				,pidfacebook = req.body.idfacebook;
-
-		if (!(pfirstname && plastname && pemail && ppassword)) {
+		if (paramsIsNull(pname,pemail)) {
 			res.sendStatus(200);
 			res.end();
 			console.log('All needed params not found');
@@ -22,13 +26,11 @@ module.exports = function(app) {
 		}
 
 		User.sync().then(function() {
-
 			var data = {
-				firstname:  pfirstname,
-				lastname: plastname,
+				name:  pname,
 				email: pemail,
-				password: ppassword,
-				idfacebook: pidfacebook
+				idfacebook: pidfacebook,
+				blacklistcount: 0
 			}
 
 			User.create(data).then(function(newUser) {
