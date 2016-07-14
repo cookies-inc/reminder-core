@@ -2,22 +2,24 @@
 
 var expect = require('expect.js');
 
-describe('models/task', function () {
-  // beforeEach(function () {
-  //   this.User = require('../../app/models/user')();
-  //   //this.Task = require('../../models').Task;
-  // });
+describe('controller/user', function () {
+  var ctrluser = require('../../app/controllers/user')();
+  describe('functions tests', function() {
 
-  //this.User = require('../../app/models/user')();
-
-  describe('create', function() {
-    it('create a user', function() {
-      expect('A').to.equal('A');
-      // return this.User.create({firstname: 'aldenor', lastname: 'junior'}).bind(this)
-      // .then(function(user) {
-      //   expect(user.firstname).to.equal('aldenor');
-      // });
-
+    it('should be params null', function() {
+      var result = ctrluser.paramsIsNull(null,null);
+      expect(true).to.equal(result);
     });
+
+    it('should be params null again', function() {
+      var result = ctrluser.paramsIsNull(1,null);
+      expect(true).to.equal(result);
+    });
+
+    it('should be params not null', function() {
+      var result = ctrluser.paramsIsNull(1,"null");
+      expect(false).to.equal(result);
+    });
+
   });
 });

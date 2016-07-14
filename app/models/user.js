@@ -11,22 +11,19 @@ module.exports = function(app) {
       primaryKey: true,
       autoIncrement: true
     },
-    firstname: {
-      type: DataTypes.STRING
-    },
-    lastname: {
+    name: {
       type: DataTypes.STRING
     },
     email: {
       type: DataTypes.STRING,
       validate: { isEmail: true }
     },
-    password: {
-      type: DataTypes.STRING
-    },
     idfacebook: {
       type: DataTypes.STRING
-    }
+    },
+    blacklistcount: {
+      type: DataTypes.INTEGER
+    },
   }, {
     classMethod: {
       associate: function(models) {
