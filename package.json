@@ -1,0 +1,45 @@
+{
+  "name": "reminder",
+  "version": "0.0.1",
+  "description": "Reminder group",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "npm run test-unit",
+    "test-unit": "mocha test/unit/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aldjunior/reminder.git"
+  },
+  "keywords": [
+    "reminder",
+    "agenda",
+    "reminder",
+    "for",
+    "groups",
+    "refresher"
+  ],
+  "author": "Aldenor Junior",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aldjunior/reminder/issues"
+  },
+  "homepage": "https://github.com/aldjunior/reminder#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-load": "^1.1.15",
+    "method-override": "^2.3.5",
+    "mysql": "^2.10.2",
+    "sequelize": "^3.23.2",
+    "sqlite3": "^3.1.4"
+  },
+  "devDependencies": {
+    "bluebird": "^2.9.33",
+    "expect.js": "^0.3.1",
+    "mocha": "^2.2.5",
+    "supertest": "^1.0.1"
+  }
+}
