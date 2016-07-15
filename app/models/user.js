@@ -30,7 +30,6 @@ module.exports = function(app) {
         //User.hasMany(models)//
       }
     }
-  }
-);
+  });
   return User;
 };
