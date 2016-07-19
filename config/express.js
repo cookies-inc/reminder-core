@@ -20,6 +20,12 @@ module.exports = function() {
 	app.use(bodyParser.urlencoded({ extended: true }));
 	app.use(require('method-override')());
 
+	app.use(function(req, res, next) {
+	  res.header("Access-Control-Allow-Origin", "*");
+	  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	  next();
+	});	
+
 	app.set('views', './app/views');
 	app.set('view engine', 'ejs');
 
@@ -29,5 +35,5 @@ module.exports = function() {
 	.into(app);
 
 	return app;
-	
+
 };
