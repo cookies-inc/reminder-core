@@ -24,6 +24,9 @@ module.exports = function(app) {
     blacklistcount: {
       type: DataTypes.INTEGER
     },
+    status: {
+      type: DataTypes.CHAR
+    }
   }, {
     classMethod: {
       associate: function(models) {

@@ -30,7 +30,8 @@ module.exports = function(app) {
 				name:  pname,
 				email: pemail,
 				idfacebook: pidfacebook,
-				blacklistcount: 0
+				blacklistcount: 0,
+				status: 'A'
 			}
 
 			User.create(data).then(function(newUser) {
@@ -58,7 +59,6 @@ module.exports = function(app) {
 				 res.json(user);
 			 });
 		 }
-
 	};
 
 	controller.update = function(req, res) {
