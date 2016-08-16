@@ -1,5 +1,5 @@
 {
-  "name": "reminder",
+  "name": "reminder-core",
   "version": "0.0.1",
   "description": "Reminder group",
   "main": "server.js",
