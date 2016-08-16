@@ -6,12 +6,12 @@
 		"client_id" : "",
 		"client_secret" : ""
 	},
-	"development": {
-		"username": "root",
+	"development_sqlite": {
+	  "username": null,
 	  "password": null,
-	  "database": "database_dev",
-	  "host": "127.0.0.1",
-	  "dialect": "mysql"
+	  "database": "database_dev_sqlite",	  
+	  "dialect": "sqlite",
+	  "storage": "./db/development.sqlite"
 	},
 	"test": {
 	  "username": "root",
