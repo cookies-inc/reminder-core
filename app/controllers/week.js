@@ -7,14 +7,7 @@ module.exports = function(app) {
 
 	var controller = {};
 
-	var sync = function() {
-		User.sync();
-		Blacklist.sync();
-		Historic.sync();
-	};
-
 	controller.usersOfWeek = function(req, res) {
-		//sync();
 		var hist = [],
 		totalUsers = 0;
 
@@ -40,10 +33,8 @@ module.exports = function(app) {
 			.then(function() {
 				db.query('SELECT * FROM users WHERE id NOT IN (:id) ',
 			  	{ replacements: { id: hist }, type: db.QueryTypes.SELECT }
-				).then(function(user) {
-					
+				).then(function(user) {					
 					console.log(user);
-
 					res.json(user);
 			    });
 			});
