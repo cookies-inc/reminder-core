@@ -1,0 +1,30 @@
+{
+	"port" : 3000,
+	"api" : {
+		"host" : "",
+		"port" : "",
+		"client_id" : "",
+		"client_secret" : ""
+	},
+	"development_sqlite": {
+	  "username": null,
+	  "password": null,
+	  "database": "database_dev_sqlite",	  
+	  "dialect": "sqlite",
+	  "storage": "./db/development.sqlite"
+	},
+	"test": {
+	  "username": "root",
+	  "password": null,
+	  "database": "database_test",
+	  "host": "127.0.0.1",
+	  "dialect": "mysql"
+	},
+	"production": {
+	  "username": "root",
+	  "password": null,
+	  "database": "database_production",
+	  "host": "127.0.0.1",
+	  "dialect": "mysql"
+	}
+}
