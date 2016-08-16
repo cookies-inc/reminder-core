@@ -9,7 +9,7 @@ var express = require('express')
 module.exports = function() {
 
 	var app = express();
-  var port = config.getPort();
+  	var port = config.getPort();
 
 	app.set('port',port);
 	app.set('sequelize',sequelize);
